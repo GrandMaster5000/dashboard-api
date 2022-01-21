@@ -3,7 +3,7 @@ import { LoggerService } from '../logger/logger.service';
 import { IControllerRoute } from './route.interface';
 export { Router } from 'express'
 
-export  class BaseController {
+export abstract class BaseController {
     private readonly _router: Router;
 
     constructor(private logger: LoggerService) {
