@@ -1,6 +1,11 @@
-import { Logger } from 'tslog'
 
-export class LoggerService {
+import 'reflect-metadata';
+import { injectable } from 'inversify';
+import { Logger } from 'tslog'
+import { ILogger } from './logger.interface';
+
+@injectable()
+export class LoggerService implements ILogger {
     logger: Logger;
 
     constructor() {
@@ -9,6 +14,10 @@ export class LoggerService {
             displayLoggerName: false,
             displayFilePath: 'hidden'
         })
+    }
+
+    hello() {
+        console.log('hello');
     }
 
     log(...args: unknown[]) {
