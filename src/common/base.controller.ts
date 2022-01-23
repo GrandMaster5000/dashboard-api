@@ -38,8 +38,3 @@ export abstract class BaseController {
 		}
 	}
 }
-function error(message: string): never {
-	throw new Error(message);
-}
-const give: undefined = error;
-console.log(give);
