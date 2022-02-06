@@ -7,7 +7,6 @@ import { TYPES } from '../types';
 import { IUserController, CustomRequest } from './user.controller.interface';
 import { UserLoginDto } from './dto/user-login.dto';
 import { UserRegisterDto } from './dto/user-register.dto';
-import { User } from './user.entity';
 import { IUserService } from './users.service.interface';
 import { HTTPError } from '../errors/http-error.class';
 
