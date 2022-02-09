@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import { NextFunction, Request, Response } from 'express';
+import { NextFunction, Response } from 'express';
 import { inject, injectable } from 'inversify';
 import { BaseController } from '../common/base.controller';
 import { ILogger } from '../logger/logger.interface';
@@ -14,7 +14,7 @@ import { ValidateMiddleware } from '../common/validate.middleware';
 @injectable()
 export class UserController extends BaseController implements IUserController {
 	constructor(
-		@inject(TYPES.ILogger) private loggerService: ILogger,
+		@inject(TYPES.Logger) private loggerService: ILogger,
 		@inject(TYPES.UserService) private userService: IUserService,
 	) {
 		super(loggerService);
