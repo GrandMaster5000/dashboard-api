@@ -9,4 +9,5 @@ export interface CustomRequest<T> extends Request {
 export interface IUserController {
 	login: (req: CustomRequest<UserLoginDto>, res: Response, next: NextFunction) => void;
 	register: (req: CustomRequest<UserRegisterDto>, res: Response, next: NextFunction) => void;
+	info: (req: Request, res: Response, next: NextFunction) => void;
 }
