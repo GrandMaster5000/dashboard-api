@@ -41,12 +41,16 @@ export class App {
 		this.app.use(this.exeptionFilter.catch.bind(this.exeptionFilter));
 	}
 
-	async init(): Promise<void> {
+	public async init(): Promise<void> {
 		this.useMiddleware();
 		this.useRoutes();
 		this.useExeptionFilters();
 		await this.prismaService.connect();
 		this.server = this.app.listen(this.port);
 		this.logger.log(`Server started on http://localhost:${this.port}`);
+	}
+
+	public close(): void {
+		this.server.close();
 	}
 }
