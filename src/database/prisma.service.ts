@@ -22,7 +22,7 @@ export class PrismaService {
 		}
 	}
 
-	async disconnext(): Promise<void> {
+	async disconnect(): Promise<void> {
 		await this.client.$disconnect();
 	}
 }
